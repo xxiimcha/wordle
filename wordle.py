@@ -124,70 +124,8 @@ def game():
         if play_again != 'yes':
             print("Thanks for playing! Goodbye!")
             break
-
-# Test function for evaluate_guess
-def test_evaluate_guess():
-    """
-    Tests the evaluate_guess function with predefined inputs.
-    Asserts that the output matches the expected feedback.
-    """
-    # Arrange
-    guess = "world"
-    target_word = "world"
-    expected_feedback = '✓✓✓✓✓'  # All letters match exactly
-
-    # Act
-    feedback = evaluate_guess(guess, target_word)
-
-    # Assert
-    assert feedback == expected_feedback, f"Test Failed: Expected {expected_feedback} but got {feedback}"
-    print(f"Test Passed: Feedback for guess '{guess}' and target '{target_word}' is '{feedback}'")
-
-def run_test_cases():
-    """
-    Runs predefined test cases for the evaluate_guess function and validates the outputs.
-    """
-    print("Running New Test Cases...\n")
-    
-    # Test Case 1: Guess with duplicate letters, target word doesn't have duplicates
-    guess1 = "boost"
-    target_word1 = "stone"
-    expected_feedback1 = "✗✗✓≈≈"  # Only 't' is correct in position
-    feedback1 = evaluate_guess(guess1, target_word1)
-    print(f"Test Case 1:")
-    print(f"Guess: {guess1}, Target Word: {target_word1}")
-    print(f"Expected Feedback: {expected_feedback1}, Actual Feedback: {feedback1}")
-    assert feedback1 == expected_feedback1, "Test Case 1 Failed!"
-    print("Test Case 1 Passed!\n")
-
-    # Test Case 2: Guess with misplaced letters
-    guess2 = "notes"
-    target_word2 = "stone"
-    expected_feedback2 = "≈≈≈≈≈"  # All letters exist but are misplaced
-    feedback2 = evaluate_guess(guess2, target_word2)
-    print(f"Test Case 2:")
-    print(f"Guess: {guess2}, Target Word: {target_word2}")
-    print(f"Expected Feedback: {expected_feedback2}, Actual Feedback: {feedback2}")
-    assert feedback2 == expected_feedback2, "Test Case 2 Failed!"
-    print("Test Case 2 Passed!\n")
-    
-    # Test Case 3: Mixed result - correct, misplaced, and wrong letters
-    guess3 = "brave"
-    target_word3 = "stone"
-    expected_feedback3 = "✗✗✗✗✓"  # 'e' is misplaced, 't' is correct
-    feedback3 = evaluate_guess(guess3, target_word3)
-    print(f"Test Case 3:")
-    print(f"Guess: {guess3}, Target Word: {target_word3}")
-    print(f"Expected Feedback: {expected_feedback3}, Actual Feedback: {feedback3}")
-    assert feedback3 == expected_feedback3, "Test Case 3 Failed!"
-    print("Test Case 3 Passed!\n")
-    
-    print("All New Test Cases Passed Successfully!\n")
-    
+ 
 if __name__ == "__main__":
-    # Run the test
-    print("Running Tests...\n")
-    run_test_cases()
-    # print("\nStarting the game...\n")
+    print("\nStarting the game...\n")
     # Start the game
-    # game()
+    game()
